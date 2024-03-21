@@ -30,3 +30,21 @@ template <typename T>
 vector<int> manacher(const T &s) {
   return manacher((int) s.size(), s);
 }
+
+
+int main() {
+  string s;
+  cin >> s;
+  auto man = manacher(s);
+
+  int l, r;
+  cin >> l >> r;
+  int len = r - l + 1;
+
+  bool isp = false;
+  if (man[l+r] >= len/2)
+    isp = true;
+
+  return isp ? 1 : 0;
+    
+}
